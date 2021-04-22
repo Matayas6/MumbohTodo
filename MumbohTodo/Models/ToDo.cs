@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,8 @@ namespace MumbohTodo.Models
 {
     public class ToDo
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ToDoID { get; set; }
 
         [EmailAddress]
@@ -15,19 +18,25 @@ namespace MumbohTodo.Models
 
         public String Title { get; set; }
 
-        public String Description { get; set; }
+        [StringLength(500)]
+        public string Description { get; set; }
 
-        public String AddedDate { get; set; }
 
         
-        public String DueDate { get; set; }
+        [Display(Name ="Date Added")]
+        public DateTime AddedDate { get; set; }
 
-        public String Done { get; set; }
+        
+        [Display(Name = "Due Date")]
+        public DateTime DueDate { get; set; }
 
-        public String DoneDate { get; set; }
+        
+        public Boolean Done { get; set; }
 
-        public int AddToDoID { get; set; }
+      
+        [Display(Name = "Done Date")]
+        public DateTime DoneDate { get; set; }
 
-        public AddToDo AddToDo { get; set;  }
+        
     }
 }

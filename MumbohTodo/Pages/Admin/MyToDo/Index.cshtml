@@ -1,0 +1,76 @@
+﻿@page
+@model MumbohTodo.Pages.Admin.MyToDo.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].Done)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDo[0].DoneDate)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ToDo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Done)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoneDate)
+            </td>
+            
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ToDoID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ToDoID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ToDoID">Delete</a>
+                <button>Check</button>
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

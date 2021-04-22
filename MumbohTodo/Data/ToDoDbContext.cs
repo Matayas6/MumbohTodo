@@ -15,7 +15,5 @@ namespace MumbohTodo.Data
         }
 
         public DbSet<ToDo> ToDos { get; set; }
-
-        public DbSet<AddToDo> AddToDos { get; set; }
     }
 }
