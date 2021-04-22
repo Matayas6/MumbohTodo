@@ -9,12 +9,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using MumbohTodo.Data;
 using MumbohTodo.Models;
 
-namespace MumbohTodo.Pages.Admin.MyToDo
+namespace MumbohTodo.Pages.Admin.Marketing
 {
     [Authorize]
     public class CreateModel : PageModel
     {
-        
         private readonly MumbohTodo.Data.ToDoDbContext _context;
 
         public CreateModel(MumbohTodo.Data.ToDoDbContext context)
@@ -24,7 +23,6 @@ namespace MumbohTodo.Pages.Admin.MyToDo
 
         public IActionResult OnGet()
         {
-        
             return Page();
         }
 
