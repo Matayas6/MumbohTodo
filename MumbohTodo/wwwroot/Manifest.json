@@ -1,0 +1,20 @@
+{
+
+  "name": "Mumboh's ToDo",
+  "short_name": "ToDo Web App",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "size": "900x900",
+      "type": "image/png",
+      "src": "https://www.vippng.com/png/detail/413-4135277_play-icon-png-football-soccer-icon-png.png"
+    }
+  ],
+  "theme_color": "#9FF781",
+  "background_color": "#9FF781"
+
+
+
+}
